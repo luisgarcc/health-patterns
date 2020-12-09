@@ -3,7 +3,7 @@ entries:
   deid:
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2020-12-09T15:36:57.7073166-07:00"
+    created: "2020-12-09T15:59:38.6279636-07:00"
     description: A Helm Chart to deploy the Alvearie De-Identification service.
     digest: 7afe45fc0a635be24588692ccc866159da01e0496c58db64ddc40c9e4fede702
     home: https://github.com/Alvearie/de-identification
@@ -24,7 +24,7 @@ entries:
   fhir:
   - apiVersion: v2
     appVersion: 4.5.0
-    created: "2020-12-09T15:36:57.711285-07:00"
+    created: "2020-12-09T15:59:38.6289665-07:00"
     description: A Helm Chart to deploy the IBM FHIR Server.
     digest: 6b82d7d3b8e634c40c9a9d64f593e01241e6157ef5e0f3146261878b0a4b5d22
     home: https://github.com/Alvearie/health-patterns/clinical-ingestion/helm-charts/fhir
@@ -45,7 +45,7 @@ entries:
   nifi-registry:
   - apiVersion: v2
     appVersion: 0.8.0
-    created: "2020-12-09T15:36:57.757294-07:00"
+    created: "2020-12-09T15:59:38.6299617-07:00"
     description: A Helm Chart to deploy a NiFi Registry.
     digest: 3c3b493ebdbf7536c1af43e4ee788644358964934a920c43d54fc5697815c6ec
     home: https://github.com/Alvearie/health-patterns/clinical-ingestion/helm-charts/nifi-registry
@@ -63,4 +63,4 @@ entries:
     urls:
     - https://luisgarcc.github.io/health-patterns/nifi-registry-0.1.0.tgz
     version: 0.1.0
-generated: "2020-12-09T15:36:57.7073166-07:00"
+generated: "2020-12-09T15:59:38.6269614-07:00"
