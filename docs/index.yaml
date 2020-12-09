@@ -1,0 +1,211 @@
+apiVersion: v1
+entries:
+  deid:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2020-12-09T15:36:57.7073166-07:00"
+    description: A Helm Chart to deploy the Alvearie De-Identification service.
+    digest: 7afe45fc0a635be24588692ccc866159da01e0496c58db64ddc40c9e4fede702
+    home: https://github.com/Alvearie/de-identification
+    keywords:
+    - ibm
+    - health records
+    - clinical data
+    - alvearie
+    - deid
+    maintainers:
+    - email: luisg@us.ibm.com
+      name: Luis A. Garcia
+    name: deid
+    type: application
+    urls:
+    - https://luisgarcc.github.io/helm-chart/deid-0.1.0.tgz
+    version: 0.1.0
+  fhir:
+  - apiVersion: v2
+    appVersion: 4.5.0
+    created: "2020-12-09T15:36:57.711285-07:00"
+    description: A Helm Chart to deploy the IBM FHIR Server.
+    digest: 6b82d7d3b8e634c40c9a9d64f593e01241e6157ef5e0f3146261878b0a4b5d22
+    home: https://github.com/Alvearie/health-patterns/clinical-ingestion/helm-charts/fhir
+    keywords:
+    - ibm
+    - fhir
+    - health records
+    - clinical data
+    - alvearie
+    maintainers:
+    - email: luisg@us.ibm.com
+      name: Luis A. Garcia
+    name: fhir
+    type: application
+    urls:
+    - https://luisgarcc.github.io/helm-chart/fhir-0.2.0.tgz
+    version: 0.2.0
+  kafka:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 2.6.0
+    created: "2020-12-09T15:36:57.7172831-07:00"
+    dependencies:
+    - condition: zookeeper.enabled
+      name: zookeeper
+      repository: https://charts.bitnami.com/bitnami
+      version: 6.x.x
+    description: Apache Kafka is a distributed streaming platform.
+    digest: 4f0d4f1b5922d825f1256e55af6fe77e9b29fdfdc33e19dff87391e864ecfbe1
+    home: https://github.com/bitnami/charts/tree/master/bitnami/kafka
+    icon: https://bitnami.com/assets/stacks/kafka/img/kafka-stack-110x117.png
+    keywords:
+    - kafka
+    - zookeeper
+    - streaming
+    - producer
+    - consumer
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: kafka
+    sources:
+    - https://github.com/bitnami/bitnami-docker-kafka
+    - https://kafka.apache.org/
+    urls:
+    - https://luisgarcc.github.io/helm-chart/kafka-12.1.0.tgz
+    version: 12.1.0
+  kube-prometheus-stack:
+  - annotations:
+      artifacthub.io/links: |
+        - name: Chart Source
+          url: https://github.com/prometheus-community/helm-charts
+        - name: Upstream Project
+          url: https://github.com/prometheus-operator/kube-prometheus
+      artifacthub.io/operator: "true"
+    apiVersion: v2
+    appVersion: 0.43.2
+    created: "2020-12-09T15:36:57.7433164-07:00"
+    dependencies:
+    - condition: kubeStateMetrics.enabled
+      name: kube-state-metrics
+      repository: https://charts.helm.sh/stable
+      version: 2.9.*
+    - condition: nodeExporter.enabled
+      name: prometheus-node-exporter
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 1.12.*
+    - condition: grafana.enabled
+      name: grafana
+      repository: https://grafana.github.io/helm-charts
+      version: 5.8.*
+    description: kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards,
+      and Prometheus rules combined with documentation and scripts to provide easy
+      to operate end-to-end Kubernetes cluster monitoring with Prometheus using the
+      Prometheus Operator.
+    digest: da2a060dae69f976d952fc0a1285b8e88a4bc093d2c56b7c22e3924f58d26157
+    home: https://github.com/prometheus-operator/kube-prometheus
+    icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
+    keywords:
+    - operator
+    - prometheus
+    - kube-prometheus
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - name: vsliouniaev
+    - name: bismarck
+    - email: gianrubio@gmail.com
+      name: gianrubio
+    - email: github.gkarthiks@gmail.com
+      name: gkarthiks
+    - email: scott@r6by.com
+      name: scottrigby
+    - email: miroslav.hadzhiev@gmail.com
+      name: Xtigyro
+    name: kube-prometheus-stack
+    sources:
+    - https://github.com/prometheus-community/helm-charts
+    - https://github.com/prometheus-operator/kube-prometheus
+    type: application
+    urls:
+    - https://luisgarcc.github.io/helm-chart/kube-prometheus-stack-12.0.4.tgz
+    version: 12.0.4
+  nifi:
+  - apiVersion: v2
+    appVersion: 1.12.1
+    created: "2020-12-09T15:36:57.7563148-07:00"
+    dependencies:
+    - condition: zookeeper.enabled
+      name: zookeeper
+      repository: https://charts.bitnami.com/bitnami
+      version: 5.23.0
+    - alias: registry
+      condition: registry.enabled
+      name: nifi-registry
+      repository: https://dysnix.github.io/charts/
+      version: 0.1.1
+    - condition: ca.enabled
+      name: ca
+      repository: ""
+      version: 1.0.1
+    description: Apache NiFi is a software project from the Apache Software Foundation
+      designed to automate the flow of data between software systems.
+    digest: 2bc5d6fad7e472776a9af02aa7d1c46fabba24e0da1696e2eb9bbeafeef15d00
+    home: https://nifi.apache.org/
+    icon: https://svn.apache.org/repos/asf/nifi/site/trunk/images/niFi-logo-horizontal-scaled.png
+    keywords:
+    - nifi
+    - data
+    - process
+    maintainers:
+    - email: alexandre.nuttinck@cetic.be
+      name: alexnuttinck
+      url: https://github.com/alexnuttinck
+    name: nifi
+    urls:
+    - https://luisgarcc.github.io/helm-chart/nifi-0.6.0.tgz
+    version: 0.6.0
+  nifi-registry:
+  - apiVersion: v2
+    appVersion: 0.8.0
+    created: "2020-12-09T15:36:57.757294-07:00"
+    description: A Helm Chart to deploy a NiFi Registry.
+    digest: 3c3b493ebdbf7536c1af43e4ee788644358964934a920c43d54fc5697815c6ec
+    home: https://github.com/Alvearie/health-patterns/clinical-ingestion/helm-charts/nifi-registry
+    keywords:
+    - ibm
+    - nifi-registry
+    - health records
+    - clinical data
+    - alvearie
+    maintainers:
+    - email: luisg@us.ibm.com
+      name: Luis A. Garcia
+    name: nifi-registry
+    type: application
+    urls:
+    - https://luisgarcc.github.io/helm-chart/nifi-registry-0.1.0.tgz
+    version: 0.1.0
+  zookeeper:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 3.6.2
+    created: "2020-12-09T15:36:57.7612823-07:00"
+    description: A centralized service for maintaining configuration information,
+      naming, providing distributed synchronization, and providing group services
+      for distributed applications.
+    digest: 26a7923e15ab3a700b7696e4bc2e35807fe4482635970aa8d235433610770470
+    home: https://github.com/bitnami/charts/tree/master/bitnami/zookeeper
+    icon: https://bitnami.com/assets/stacks/zookeeper/img/zookeeper-stack-110x117.png
+    keywords:
+    - zookeeper
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: zookeeper
+    sources:
+    - https://github.com/bitnami/bitnami-docker-zookeeper
+    - https://zookeeper.apache.org/
+    urls:
+    - https://luisgarcc.github.io/helm-chart/zookeeper-6.0.0.tgz
+    version: 6.0.0
+generated: "2020-12-09T15:36:57.7073166-07:00"
